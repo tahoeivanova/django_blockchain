@@ -1,0 +1,15 @@
+{% extends 'blockchain/base.html' %}
+{% block content %}
+<h1>Index page</h1>
+<div>
+
+    <p>Integrity</p>
+    <ul>
+    {% for item in out %}
+        <li>{{item}}</li>
+
+    {% endfor %}
+    </ul>
+
+</div>
+{% endblock %}

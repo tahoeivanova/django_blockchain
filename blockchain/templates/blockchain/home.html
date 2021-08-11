@@ -1,0 +1,14 @@
+{% extends 'blockchain/base.html' %}
+{% block content %}
+<h1>Index page</h1>
+<div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Добавить</button>
+    </form>
+    </br>
+    <a href="{% url 'blockchain:check_integrity' %}">Check integrity</a></li>
+
+</div>
+{% endblock %}
