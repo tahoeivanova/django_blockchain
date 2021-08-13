@@ -1,9 +1,8 @@
 {% extends 'blockchain/base.html' %}
 {% block content %}
-<h1>Index page</h1>
+<h1>Integrity</h1>
 <div>
 
-    <p>Integrity</p>
     <ul>
     {% for item in out %}
         <li>{{item}}</li>
@@ -12,4 +11,6 @@
     </ul>
 
 </div>
+<a href="{% url 'show_form' %}">To main page</a></li>
+
 {% endblock %}

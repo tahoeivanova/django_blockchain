@@ -21,15 +21,15 @@ def show_form(request):
 def success(request):
     return render(request, 'blockchain/succeded.html')
 def get_hash(info):
-    hash_for_data = hashlib.md5(info.encode('utf-8')).hexdigest()
+    hash_for_data = hashlib.md5(info).hexdigest()
     return hash_for_data
 
 def check_integrity(request):
     out = {}
     blocks = Block.objects.all()
     for i in range(1, len(blocks)):
-        if blocks[i].prev_hash == get_hash(blocks[i-1].name):
-            out[blocks[i]] = 'ok'
+        if blocks[i].prev_hash == get_hash(blocks[i-1].infofile.info):
+            out[(blocks[i])] = 'ok'
         else:
             out[blocks[i]] = 'Corrupted'
 
